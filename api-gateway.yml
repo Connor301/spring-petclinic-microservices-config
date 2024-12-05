@@ -25,6 +25,10 @@ spring:
   zipkin:
     baseUrl: http://tracing-server.petclinic:9411
 eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: api-gateway.petclinic
+    instance-id: api-gateway:${random.uuid}
   client:
     serviceUrl:
-      defaultZone: http://internal-petclinic-internal-alb-378481021.us-east-2.elb.amazonaws.com:8761/eureka/
+      defaultZone: http://discovery-server.petclinic:8761/eureka/

@@ -3,11 +3,12 @@
 
 eureka:
   instance:
-    hostname: internal-petclinic-internal-alb-378481021.us-east-2.elb.amazonaws.com
+    prefer-ip-address: false
+    hostname: discovery-server.petclinic
   # standalone mode
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://discovery-server.petclinic:8761/eureka/
 
