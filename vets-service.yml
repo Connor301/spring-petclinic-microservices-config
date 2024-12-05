@@ -24,9 +24,10 @@ server:
   port: 8083
 eureka:
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
     hostname: internal-petclinic-internal-alb-378481021.us-east-2.elb.amazonaws.com  # Adres ILB
+    instance-id: ${spring.application.name}:${random.uuid}
   client:
     serviceUrl:
-      defaultZone: http://discovery-server.petclinic:8761/eureka/
+      defaultZone: http://internal-petclinic-internal-alb-378481021.us-east-2.elb.amazonaws.com:8761/eureka/
 
