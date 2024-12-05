@@ -3,7 +3,7 @@
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: internal-petclinic-internal-alb-378481021.us-east-2.elb.amazonaws.com
   # standalone mode
   client:
     registerWithEureka: false
